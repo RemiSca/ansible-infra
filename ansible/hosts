@@ -1,0 +1,9 @@
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_pass=root
+
+[app]
+ansible-infra-remote-1
+ansible-infra-remote-2
+ansible-infra-remote-3
