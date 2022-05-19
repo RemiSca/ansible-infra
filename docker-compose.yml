@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  ansible:
+    hostname: ansible
+    build: ./server
+    volumes:
+      - ./home:/home/user
+      - /etc/localtime:/etc/localtime:ro
+      - ./ansible/hosts:/etc/ansible/hosts
+
+  remote:
+    build: remote
+    deploy:
+       replicas: 3
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
