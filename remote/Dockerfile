@@ -36,11 +36,11 @@ RUN { \
     } > /usr/local/bin/entry_point.sh; \
     chmod +x /usr/local/bin/entry_point.sh;
 
-#ENV ROOT_PASSWORD=root
+ENV ROOT_PASSWORD=root
+
+RUN echo "root:${ROOT_PASSWORD}" | chpasswd
 
 EXPOSE 22
-
-RUN echo 'root:root' | chpasswd
 
 # pyenv dependencies
 #RUN apt-get --no-install-recommends -y install make build-essential libssl-dev zlib1g-dev libbz2-dev \

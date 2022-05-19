@@ -9,8 +9,6 @@ RUN apt-get update && \
       vim \
       procps \
       man \
-      neofetch \
-      openjdk-11-jdk \
       python3-pip \
       make build-essential libssl-dev zlib1g-dev libbz2-dev \
       libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
@@ -32,7 +30,7 @@ RUN apt-get update && \
 RUN pip install ansible
 
 RUN useradd user --shell /usr/bin/zsh --uid 501 && \
-echo "remi ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
 
 VOLUME /home/user
 
