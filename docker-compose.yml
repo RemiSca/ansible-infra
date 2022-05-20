@@ -6,7 +6,7 @@ services:
     volumes:
       - ./home:/home/user
       - /etc/localtime:/etc/localtime:ro
-      - ./ansible/hosts:/etc/ansible/hosts
+      - ./ansible:/etc/ansible
 
   remote:
     build: remote
